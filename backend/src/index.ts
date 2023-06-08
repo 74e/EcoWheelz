@@ -148,6 +148,8 @@ app.post("/login", async (req: Request, res: Response) => {
     if (existingToken.length !== 0) {
       res.status(200).json({
         email: userInfo[0].email,
+        firstName: userInfo[0].firstName,
+        lastName: userInfo[0].lastName,
         token: existingToken[0].token,
       });
     } else {
