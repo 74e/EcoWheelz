@@ -74,8 +74,9 @@ export function ContextProvider({ children }: Props) {
 
           setLogin({ email, firstName, lastName, token });
         } catch (error) {
+          localStorage.removeItem("token");
+          
           setErrorMsg(true);
-
           setTimeout(() => {
             setErrorMsg(false);
           }, 2500);
