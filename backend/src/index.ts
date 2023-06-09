@@ -79,11 +79,6 @@ const authorize = async (req: Request, res: Response, next: NextFunction) => {
   }
 };
 
-app.get("/users", async (req: Request, res: Response) => {
-  const { rows } = await client.query("SELECT * FROM users");
-  res.send(rows);
-});
-
 app.post("/signup", async (req: Request, res: Response) => {
   const { email, password, firstName, lastName, phoneNumber } = req.body;
 
